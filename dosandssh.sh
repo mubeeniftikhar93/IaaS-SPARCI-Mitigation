@@ -29,7 +29,7 @@ apt install iptables
 /sbin/iptables -t mangle -A PREROUTING -s 127.0.0.0/8 ! -i lo -j DROP
 /sbin/iptables -t mangle -A PREROUTING -p icmp -j DROP
 /sbin/iptables -t mangle -A PREROUTING -f -j DROP
-/sbin/iptables -A INPUT -p tcp -m connlimit --connlimit-above 111 -j REJECT --reject-with tcp-reset
+/sbin/iptables -A INPUT -p tcp -m connlimit --connlimit-above 200 -j REJECT --reject-with tcp-reset
 /sbin/iptables -A INPUT -p tcp --tcp-flags RST RST -m limit --limit 2/s --limit-burst 2 -j ACCEPT
 /sbin/iptables -A INPUT -p tcp --tcp-flags RST RST -j DROP
 /sbin/iptables -A INPUT -p tcp -m conntrack --ctstate NEW -m limit --limit 60/s --limit-burst 20 -j ACCEPT
