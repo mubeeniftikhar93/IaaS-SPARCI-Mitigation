@@ -9,7 +9,6 @@ sudo ./dosandssh.sh
 
 After running the script, IPTables custom configuration was applied. If IPTables is not installed on your OS, it will be installed when running the script.
 
-"...the **go to** statement should be abolished..." [[1]](#1).
 
 ## References
 <a id="1">[1]</a> 
